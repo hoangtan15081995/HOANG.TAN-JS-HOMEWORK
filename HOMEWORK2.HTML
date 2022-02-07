@@ -12,47 +12,25 @@
   <p id="min_number"></p>
   <p id="total"></p>
   <script>
-    const numbers = [8, 1, 2, 3, 5, 6];
-    function findmax ()
-    {
-       let a = numbers.length;
-       let max = numbers [0];
-       for (let i=0; i<a; i++)
-     {
-       if (numbers[i]>max)
-       {
-         max = numbers[i];
-       }
-     }
-      return max;
-    }
-    document.getElementById("max_number").innerHTML = findmax ();
-    function findmin()
-    {
-      let a = numbers.length
-      let min = numbers [0];
-      for (let i=0; i<a; i++)
-      {
-        if (numbers[i]<min)
-        {
-          min = numbers [i];
-        }
-      }
-      return min;
-    }
-    document.getElementById("min_number").innerHTML = findmin();
+    const numbers = [8,1,2,3,5,6];
+    numbers.sort(function(a,b){return a-b});
+    function FindMaxNumber()
+    {return numbers[numbers.length-1]};
+    function FindMinNumber()
+    {return numbers[0]};
+
+    document.getElementById("max_number").innerHTML = FindMaxNumber()
+    document.getElementById("min_number").innerHTML = FindMinNumber()
     function total()
     {
-      let a = numbers.length
       let sum = 0;
-      for (let i=0; i<a; i++)
+      for (let i=0; i<numbers.length; i++)
       {
         sum += numbers[i];
       }
       return sum;
     }
     document.getElementById("total").innerHTML = total();
-    
   </script>
 
 </body>
