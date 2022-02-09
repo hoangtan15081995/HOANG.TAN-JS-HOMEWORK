@@ -13,24 +13,29 @@
   <p id="total"></p>
   <script>
     const numbers = [8,1,2,3,5,6];
-    numbers.sort(function(a,b){return a-b});
-    function FindMaxNumber()
-    {return numbers[numbers.length-1]};
-    function FindMinNumber()
-    {return numbers[0]};
-
-    document.getElementById("max_number").innerHTML = FindMaxNumber()
-    document.getElementById("min_number").innerHTML = FindMinNumber()
-    function total()
+    const kaido = [23,4,5,7,12,98,56];
+    const kid = [2,4,5,7,8,98,45,47];
+    function FindMaxNumber(x)
+    {
+      return Math.max.apply(null,x);
+    }
+    function FindMinNumber(x)
+    {
+      return Math.min.apply(null,x);
+    }
+    function total(x)
     {
       let sum = 0;
-      for (let i=0; i<numbers.length; i++)
+      for (let i=0; i<x.length; i++)
       {
-        sum += numbers[i];
+        sum += x[i];
       }
       return sum;
     }
-    document.getElementById("total").innerHTML = total();
+    document.getElementById("max_number").innerHTML = "The max number is" + " " + FindMaxNumber(numbers);
+    document.getElementById("min_number").innerHTML = "The min number is" + " " + FindMinNumber(numbers);
+    document.getElementById("total").innerHTML = " Total is" + " " + total(numbers);
+    
   </script>
 
 </body>
