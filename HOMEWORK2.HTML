@@ -13,10 +13,9 @@
   <p id="total"></p>
   <script>
     const numbers = [8,1,2,3,5,6];
-    const kaido = [24,6,7,8,9,4];
     document.getElementById("max_number").innerHTML = "The max number is" + " " + FindMaxNumber(numbers);
     document.getElementById("min_number").innerHTML = "The min number is" + " " + FindMinNumber(numbers);
-    document.getElementById("total").innerHTML = " Total is" + " " + total(kaido);
+    document.getElementById("total").innerHTML = " Total is" + " " + total(numbers);
     function FindMaxNumber(x)
     {
       return Math.max.apply(null,x);
@@ -34,11 +33,6 @@
       }
       return sum;
     }
-    
-     
-
-  
-    
   </script>
 
 </body>
