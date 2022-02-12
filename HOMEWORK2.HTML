@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h2>JavaScript For Loop</h2>
+  <p id="max_number"></p>
+  <p id="min_number"></p>
+  <p id="total"></p>
+  <script>
+    const numbers = [8,1,2,3,5,6];
+    document.getElementById("max_number").innerHTML = "The max number is" + " " + FindMaxNumber(numbers);
+    document.getElementById("min_number").innerHTML = "The min number is" + " " + FindMinNumber(numbers);
+    document.getElementById("total").innerHTML = " Total is" + " " + total(numbers);
+    function FindMaxNumber(x)
+    {
+      return Math.max.apply(null,x);
+    }
+    function FindMinNumber(x)
+    {
+      return Math.min.apply(null,x);
+    }
+    function total(x)
+    {
+      let sum = x.reduce(function(total,value) { return total + value });
+      return sum;
+    }
+  </script>
+
+</body>
+</html>
