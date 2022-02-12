@@ -26,11 +26,7 @@
     }
     function total(x)
     {
-      let sum = x.reduce(myFunction);
-      function myFunction (total,value)
-      {
-        return total + value;
-      }
+      let sum = x.reduce(function(total,value) { return total + value });
       return sum;
     }
   </script>
