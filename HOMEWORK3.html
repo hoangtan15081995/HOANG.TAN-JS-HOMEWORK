@@ -12,31 +12,32 @@
   <p id="total_age"></p>
   <div id="members"></div>
   <script>
-    let i;
-    const members = {firstName: "firstName" + i, lastName: "lastName" + i, age: i + 18};
+    
     function generateMembers()
     {
-      let list = "";
+      let list = [];
       for (i=0; i<3; i++)
-      {
-        list += members.firstName + "-" + members.lastName + "-" + members.age + "<br>";
-        document.write(list);
+      { 
+        list[i] = {firstName: "firstName" + i, lastName: "lastName" + i, age: i + 18};
       }
+      return list;
     }
-    function displayTotalAge()
+   
+    function displayTotalAge(members)
     {
-      let sum = "";
+      let sum = 0;
       let text = "";
-      for (i=0; i<3; i++)
+      for (i = 0; i < members.length; i++)
       {
-        sum += members.age;
-        text += members.firstName + "-" + members.age + "<br>";
-        document.getElementById("total_age").innerHTML = sum;
-        document.getElementById("members").innerHTML = text;
+        const member = members[i];
+        sum += member.age;
+        text += member.firstName + "-" + member.age + "<br>";
       }
+      document.getElementById("total_age").innerHTML = sum;
+      document.getElementById("members").innerHTML = text;
     }
-    generateMembers();
-    displayTotalAge();
+    //const members = generateMembers();
+    displayTotalAge(generateMembers());
   </script>
 </body>
 </html>
