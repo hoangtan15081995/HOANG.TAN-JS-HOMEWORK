@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h2>JavaScript Objects</h2>
+
+  <p id="total_age"></p>
+  <div id="members"></div>
+  <script>
+    let i;
+    const members = {firstName: "firstName" + i, lastName: "lastName" + i, age: i + 18};
+    function generateMembers()
+    {
+      let list = "";
+      for (i=0; i<3; i++)
+      {
+        list += members.firstName + "-" + members.lastName + "-" + members.age + "<br>";
+        document.write(list);
+      }
+    }
+    function displayTotalAge()
+    {
+      let sum = "";
+      let text = "";
+      for (i=0; i<3; i++)
+      {
+      sum += members.age;
+      text += members.firstName + "-" + members.age + "<br>";
+      document.getElementById("total_age").innerHTML = sum;
+      document.getElementById("members").innerHTML = text;
+      }
+    }
+    generateMembers();
+    displayTotalAge();
+  </script>
+</body>
+</html>
